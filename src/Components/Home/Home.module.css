@@ -25,14 +25,24 @@
 
 .header__info {
   font-size: 1.7rem;
-  font-weight: 600;
+  font-weight: 500;
   padding-right: 12.75rem;
   line-height: 160%;
   margin-bottom: 6.4rem;
-  width: 439px;
+  width: 481px;
 }
 
 .header__button {
-  background-color: #6a62b7;
+  font-size: 1.9rem;
+  text-shadow: 0px 3px 2px #a9a9a9;
+  background-color: transparent;
   color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.header__button:hover {
+  background-color: #d0cbff;
+  border-radius: 20px;
 }

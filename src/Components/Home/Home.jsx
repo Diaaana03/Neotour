@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Home.module.css";
 import homeImg from "../../Assets/Images/Home-img.svg";
+import arrow from "../../Assets/Images/btn-arrow.svg";
 
 export const Home = () => {
   return (
@@ -13,7 +14,10 @@ export const Home = () => {
               Enjoy your winter vacations with warmth and amazing sightseeing on
               the mountains. Enjoy the best experience with us!
             </p>
-            <button className={classes.header__button}>Lets’ go</button>
+            <button className={classes.header__button}>
+              Lets’ go
+              <img src={arrow} alt="arrow" />
+            </button>
           </div>
           <div className={classes.home__container_wrapper}>
             <img

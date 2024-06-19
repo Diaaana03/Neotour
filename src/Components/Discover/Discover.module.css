@@ -1,0 +1,30 @@
+.discover__container {
+  max-width: 1440px;
+  margin: auto;
+  padding-inline: 7.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.discover__header {
+  font-size: 2.8rem;
+}
+
+.header__arrow_btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.arrow__btn {
+  padding: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #888888;
+  background-color: transparent;
+}
+
+.arrow__btn:hover {
+  background-color: #d0cbff;
+}
