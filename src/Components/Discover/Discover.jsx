@@ -31,14 +31,14 @@ export const Discover = () => {
       <section className={classes.discover}>
         <div className={classes.discover__container}>
           <h2 className={classes.discover__header}>Discover</h2>
-          <div className={classes.header__arrow_btns}>
+          {/* <div className={classes.header__arrow_btns}>
             <button className={classes.arrow__btn}>
               <img src={leftArrow} alt="left-arrow" />
             </button>
             <button className={classes.arrow__btn}>
               <img src={rightArrow} alt="right-arrow" />
             </button>
-          </div>
+          </div> */}
         </div>
         <div className={classes.carousel__box}>
           <Carousel responsive={responsive}>
