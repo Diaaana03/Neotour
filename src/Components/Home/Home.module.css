@@ -43,6 +43,5 @@
 }
 
 .header__button:hover {
-  background-color: #d0cbff;
-  border-radius: 20px;
+  color: #000;
 }
