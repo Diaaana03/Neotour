@@ -1,5 +1,6 @@
 .discover__container {
   max-width: 1440px;
+  margin-top: 5rem;
   margin-bottom: 3rem;
   padding-inline: 7.5rem;
   display: flex;
@@ -11,7 +12,7 @@
   font-size: 2.8rem;
 }
 
-.header__arrow_btns {
+/* .header__arrow_btns {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
@@ -27,6 +28,25 @@
 
 .arrow__btn:hover {
   background-color: #d0cbff;
+} */
+
+.discover__nav {
+  align-items: center;
+  display: flex;
+}
+
+.discover__ul {
+  display: flex;
+  gap: 6.8rem;
+}
+
+.discover__btn {
+  font-size: 1.7rem;
+  border: none;
+  font-weight: 400;
+  background: none;
+  transition: color 0.5s ease-in-out;
+  cursor: pointer;
 }
 
 .carousel__box {

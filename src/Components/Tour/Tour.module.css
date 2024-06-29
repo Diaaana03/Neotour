@@ -1,0 +1,71 @@
+.back__btn {
+  color: black;
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+}
+
+.tour__container {
+  max-width: 1440px;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  padding-inline: 7.5rem;
+}
+
+.tour__h1 {
+  font-size: 6.3rem;
+  font-weight: 900;
+}
+
+.tour__location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tour__h5 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.tour__h3 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-top: 4.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.reviews__user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1.6rem;
+}
+
+.tour__h4 {
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.reviews__text {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 142.3%; /* 25.614px */
+}
+
+.book__btn {
+  width: 100%;
+  background-color: #6a62b7;
+  margin-top: 7rem;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 500;
+  border: none;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+.book__btn:hover {
+  text-decoration: underline;
+}

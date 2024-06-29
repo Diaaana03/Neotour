@@ -2,8 +2,8 @@ import React from "react";
 import classes from "./Discover.module.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import leftArrow from "../../Assets/Images/left-arrow.svg";
-import rightArrow from "../../Assets/Images/right-arrow.svg";
+// import leftArrow from "../../Assets/Images/left-arrow.svg";
+// import rightArrow from "../../Assets/Images/right-arrow.svg";
 import slide1 from "../../Assets/Images/Slide1.svg";
 
 export const Discover = () => {
@@ -28,7 +28,7 @@ export const Discover = () => {
   };
   return (
     <>
-      <section className={classes.discover}>
+      <section className={classes.discover} id="discover">
         <div className={classes.discover__container}>
           <h2 className={classes.discover__header}>Discover</h2>
           {/* <div className={classes.header__arrow_btns}>
@@ -39,6 +39,17 @@ export const Discover = () => {
               <img src={rightArrow} alt="right-arrow" />
             </button>
           </div> */}
+          <div className={classes.discover__nav}>
+            <ul className={classes.discover__ul}>
+              <button className={classes.discover__btn} autoFocus>
+                Popular
+              </button>
+              <button className={classes.discover__btn}>Featured</button>
+              <button className={classes.discover__btn}>Most Visted</button>
+              <button className={classes.discover__btn}>Europe</button>
+              <button className={classes.discover__btn}>Asia</button>
+            </ul>
+          </div>
         </div>
         <div className={classes.carousel__box}>
           <Carousel responsive={responsive}>

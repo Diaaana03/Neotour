@@ -1,0 +1,97 @@
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.book__container {
+  width: 45rem;
+  border-radius: 50px;
+  padding: 4rem;
+}
+
+.book__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book__h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.cross__img {
+  cursor: pointer;
+}
+
+.book__text {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 2rem 0 3.2rem;
+}
+
+label {
+  cursor: initial;
+  color: #888;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+input {
+  padding: 15px;
+  color: #888;
+  font-size: 1.8rem;
+  font-weight: 400;
+  border-radius: 30px;
+  border: 1px solid;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.counter {
+  margin-top: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.6rem;
+}
+
+.amount__btn {
+  border-radius: 16px;
+  padding: 0;
+  width: 4.2rem;
+  height: 4.8rem;
+  background: #897cff;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.amount__btn:hover {
+  color: #000;
+}
+
+.people__amount {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.form__submit_btn {
+  font-size: 2rem;
+  color: #fff;
+  margin-top: 4.8rem;
+  width: 100%;
+  background-color: #b4b0da;
+  border-radius: 30px;
+  border: none;
+  padding: 1.5rem 0;
+  cursor: pointer;
+}
+
+.form__submit_btn:hover {
+  background-color: #6a62b7;
+}
