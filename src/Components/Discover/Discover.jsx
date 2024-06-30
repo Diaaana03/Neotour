@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./Discover.module.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-// import leftArrow from "../../Assets/Images/left-arrow.svg";
-// import rightArrow from "../../Assets/Images/right-arrow.svg";
-import slide1 from "../../Assets/Images/Slide1.svg";
+import axios from "axios";
+
+const popularUrl = "https://muha-backender.org.kg/category-tour/popular/";
+const featuredUrl = "https://muha-backender.org.kg/category-tour/featured/";
+const mostVisitedUrl =
+  "https://muha-backender.org.kg/category-tour/most_visited/";
+const europeUrl = "https://muha-backender.org.kg/category-tour/Europe/";
+const asiaUrl = "https://muha-backender.org.kg/category-tour/Asia/";
 
 export const Discover = () => {
+  const [popularTours, setPopularTours] = useState([]);
+  const [activeCategory, setActiveCategory] = useState("popular");
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -26,26 +33,78 @@ export const Discover = () => {
       items: 1,
     },
   };
+
+  useEffect(() => {
+    const fetchTours = async () => {
+      let url;
+      switch (activeCategory) {
+        case "popular":
+          url = popularUrl;
+          break;
+        case "featured":
+          url = featuredUrl;
+          break;
+        case "most_visited":
+          url = mostVisitedUrl;
+          break;
+        case "europe":
+          url = europeUrl;
+          break;
+        case "asia":
+          url = asiaUrl;
+          break;
+        default:
+          url = popularUrl;
+      }
+
+      try {
+        const response = await axios.get(url);
+        setPopularTours(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.log(`Error fetching ${activeCategory} tours`, error);
+      }
+    };
+
+    fetchTours();
+  }, [activeCategory]);
+
+  const handleCategoryClick = (category) => {
+    setActiveCategory(category);
+  };
+
   return (
     <>
       <section className={classes.discover} id="discover">
         <div className={classes.discover__container}>
           <h2 className={classes.discover__header}>Discover</h2>
-          {/* <div className={classes.header__arrow_btns}>
-            <button className={classes.arrow__btn}>
-              <img src={leftArrow} alt="left-arrow" />
-            </button>
-            <button className={classes.arrow__btn}>
-              <img src={rightArrow} alt="right-arrow" />
-            </button>
-          </div> */}
+
           <div className={classes.discover__nav}>
             <ul className={classes.discover__ul}>
-              <button className={classes.discover__btn} autoFocus>
+              <button
+                className={`${classes.discover__btn} ${
+                  activeCategory === "popular" ? classes.active : ""
+                }`}
+                onClick={() => handleCategoryClick("popular")}
+              >
                 Popular
               </button>
-              <button className={classes.discover__btn}>Featured</button>
-              <button className={classes.discover__btn}>Most Visted</button>
+              <button
+                className={`${classes.discover__btn} ${
+                  activeCategory === "featured" ? classes.active : ""
+                }`}
+                onClick={() => handleCategoryClick("featured")}
+              >
+                Featured
+              </button>
+              <button
+                className={`${classes.discover__btn} ${
+                  activeCategory === "most_visited" ? classes.active : ""
+                }`}
+                onClick={() => handleCategoryClick("most_visited")}
+              >
+                Most Visited
+              </button>
               <button className={classes.discover__btn}>Europe</button>
               <button className={classes.discover__btn}>Asia</button>
             </ul>
@@ -53,18 +112,16 @@ export const Discover = () => {
         </div>
         <div className={classes.carousel__box}>
           <Carousel responsive={responsive}>
-            <div className={classes.slide__card}>
-              <img className={classes.slide__img} src={slide1} alt="slide1" />
-            </div>
-            <div className={classes.slide__card}>
-              <img className={classes.slide__img} src={slide1} alt="slide1" />
-            </div>
-            <div className={classes.slide__card}>
-              <img className={classes.slide__img} src={slide1} alt="slide1" />
-            </div>
-            <div>
-              <img className={classes.slide__img} src={slide1} alt="slide1" />
-            </div>
+            {popularTours.map((tour) => (
+              <div className={classes.slide__card} key={tour.id}>
+                <img
+                  className={classes.slide__img}
+                  src={tour.thumbnail}
+                  alt={tour.name}
+                />
+                <h3 className={classes.slide__h3}>{tour.name}</h3>
+              </div>
+            ))}
           </Carousel>
         </div>
       </section>

@@ -1,3 +1,7 @@
+.discover {
+  margin-bottom: 5rem;
+}
+
 .discover__container {
   max-width: 1440px;
   margin-top: 5rem;
@@ -41,37 +45,44 @@
 }
 
 .discover__btn {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   border: none;
-  font-weight: 400;
+  font-weight: 500;
   background: none;
   transition: color 0.5s ease-in-out;
   cursor: pointer;
 }
 
 .carousel__box {
-  max-width: 1440px;
-  margin: 0 auto;
-  height: 30rem;
-}
-
-.carousel__box ul {
-  display: flex !important;
-  margin: 0 auto !important;
-}
-
-.carousel__box li {
-  width: 230px !important;
-  margin-right: 6rem;
+  padding-inline: 7.5rem;
 }
 
 .slide__card {
-  display: flex;
-  width: 230px;
-  margin: 0 auto;
+  padding: 8px;
+  position: relative;
 }
 .slide__img {
-  width: 30rem;
-  height: 20rem;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
   cursor: pointer;
+  border-radius: 8px;
+}
+
+.slide__h3 {
+  position: absolute;
+  bottom: 11px;
+  width: 96%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  margin: 0;
+  font-size: 2rem;
+  text-align: left;
+  padding: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.active {
+  color: #6a62b7;
 }

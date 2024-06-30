@@ -4,6 +4,7 @@ import classes from "./Info.module.css";
 import crossIcon from "../../Assets/Images/crossIcon.svg";
 
 export const Info = () => {
+  const [modal, serModal] = useState(false);
   const [peopleCount, setPeopleCount] = useState(0);
   function decreaseCountPeople(event) {
     event.preventDefault();
