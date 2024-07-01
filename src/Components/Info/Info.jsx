@@ -2,10 +2,22 @@ import React from "react";
 import { useState } from "react";
 import classes from "./Info.module.css";
 import crossIcon from "../../Assets/Images/crossIcon.svg";
+import { Link } from "react-router-dom";
+import Flag from "../../Assets/Images/Flag.svg";
 
-export const Info = () => {
-  const [modal, serModal] = useState(false);
-  const [peopleCount, setPeopleCount] = useState(0);
+export const Info = ({ closeModal }) => {
+  const [peopleCount, setPeopleCount] = useState(1);
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [comment, setComment] = useState("");
+
+  const handlePhoneChange = (e) => setPhoneNumber(e.target.value);
+  const handleCommentChange = (e) => setComment(e.target.value);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log({ phoneNumber, comment, peopleCount });
+  };
+
   function decreaseCountPeople(event) {
     event.preventDefault();
     setPeopleCount((value) => (value >= 1 ? value - 1 : 0));
@@ -26,30 +38,39 @@ export const Info = () => {
               className={classes.cross__img}
               src={crossIcon}
               alt="cross icon"
+              onClick={closeModal}
             />
           </div>
           <p className={classes.book__text}>
             To submit an application for a tour reservation, you need to fill in
             your information and select the number of people for the reservation
           </p>
-          <form className={classes.book__form}>
+          <form className={classes.book__form} onSubmit={handleSubmit}>
             <label htmlFor="phone">Phone number</label>
             <div className={classes.book__phone}>
+              <div className={classes.flag__box}>
+                <img src={Flag} alt="Flag" className={classes.flag__icon} />
+              </div>
               <input
+                className={classes.phone__input}
                 type="number"
                 id="phone"
                 maxLength={13}
                 name="phone"
-                placeholder="+996 (999) 999 999"
+                placeholder="+996"
+                value={phoneNumber}
+                onChange={handlePhoneChange}
               />
             </div>
             <label htmlFor="comment">Commentaries to trip</label>
             <div>
               <input
                 type="text"
-                placeholder="Write your wishes to trip..."
+                placeholder="Please leave your comments to trip..."
                 id="comment"
                 name="comment"
+                value={comment}
+                onChange={handleCommentChange}
               />
             </div>
             <label htmlFor="counter">Amount of people</label>
@@ -70,7 +91,9 @@ export const Info = () => {
                 </button>
               </div>
             </div>
-            <button className={classes.form__submit_btn}>Submit</button>
+            <Link to="/">
+              <button className={classes.form__submit_btn}>Submit</button>
+            </Link>
           </form>
         </div>
       </section>

@@ -1,8 +1,26 @@
+.tour__background {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .back__btn {
-  color: black;
+  color: #fff;
   border: none;
   background-color: transparent;
   font-size: 2rem;
+  position: absolute;
+  z-index: 1;
+  top: 8rem;
+  left: 10rem;
+  cursor: pointer;
+}
+
+.back__btn:hover {
+  text-decoration: underline;
 }
 
 .tour__container {
@@ -68,4 +86,9 @@
 
 .book__btn:hover {
   text-decoration: underline;
+}
+
+.loading {
+  text-align: center;
+  font-size: 2rem;
 }

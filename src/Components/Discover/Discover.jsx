@@ -3,17 +3,17 @@ import classes from "./Discover.module.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const popularUrl = "https://muha-backender.org.kg/category-tour/popular/";
 const featuredUrl = "https://muha-backender.org.kg/category-tour/featured/";
 const mostVisitedUrl =
   "https://muha-backender.org.kg/category-tour/most_visited/";
-const europeUrl = "https://muha-backender.org.kg/category-tour/Europe/";
-const asiaUrl = "https://muha-backender.org.kg/category-tour/Asia/";
 
 export const Discover = () => {
   const [popularTours, setPopularTours] = useState([]);
   const [activeCategory, setActiveCategory] = useState("popular");
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -46,12 +46,6 @@ export const Discover = () => {
           break;
         case "most_visited":
           url = mostVisitedUrl;
-          break;
-        case "europe":
-          url = europeUrl;
-          break;
-        case "asia":
-          url = asiaUrl;
           break;
         default:
           url = popularUrl;
@@ -113,14 +107,18 @@ export const Discover = () => {
         <div className={classes.carousel__box}>
           <Carousel responsive={responsive}>
             {popularTours.map((tour) => (
-              <div className={classes.slide__card} key={tour.id}>
+              <Link
+                to={`/tour/${tour.id}`}
+                key={tour.id}
+                className={classes.slide__card}
+              >
                 <img
                   className={classes.slide__img}
                   src={tour.thumbnail}
                   alt={tour.name}
                 />
                 <h3 className={classes.slide__h3}>{tour.name}</h3>
-              </div>
+              </Link>
             ))}
           </Carousel>
         </div>

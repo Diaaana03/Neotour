@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Recommended.module.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const recommendedUrl = "https://muha-backender.org.kg/list-tours/";
 
@@ -26,14 +27,16 @@ export const Recommended = () => {
 
           <div className={classes.recommended__grid}>
             {tour.map((tourItem) => (
-              <div className={classes.recommended__card} key={tourItem.id}>
-                <img
-                  src={tourItem.thumbnail}
-                  alt={"trip"}
-                  className={classes.recommended__img}
-                />
-                <h3 className={classes.recommended__h3}>{tourItem.name}</h3>
-              </div>
+              <Link to={`/tour/${tourItem.id}`} key={tourItem.id}>
+                <div className={classes.recommended__card} key={tourItem.id}>
+                  <img
+                    src={tourItem.thumbnail}
+                    alt={"trip"}
+                    className={classes.recommended__img}
+                  />
+                  <h3 className={classes.recommended__h3}>{tourItem.name}</h3>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -41,56 +44,3 @@ export const Recommended = () => {
     </>
   );
 };
-
-// .recomended{
-//     h2{
-//         color: var(--black, #141414);
-//         font-size: 48px;
-//         font-weight: 700;
-//         margin-bottom: 8.2rem;
-//     }
-
-//     padding-bottom: 13.2rem;
-// }
-
-// .recomended__gallery{
-//     display: grid;
-//     grid-template-columns: repeat(4, 1fr);
-//     gap: 1.4rem;
-
-//     .gallery__img{
-//         aspect-ratio: 1 / 1;
-//         background: black;
-//         overflow: hidden;
-//         border-radius: 20px;
-//         position: relative;
-//         object-fit: contain;
-
-//         img{
-//             height: 100%;
-//         }
-
-/* <div className={classes.recommended__card}>
-              <img
-                src={grid1}
-                alt={grid1}
-                className={classes.recommended__img}
-              />
-              <h3 className={classes.recommended__h3}>Mountains</h3>
-            </div>
-            <div className={classes.recommended__card}>
-              <img
-                src={grid1}
-                alt={grid1}
-                className={classes.recommended__img}
-              />
-              <h3 className={classes.recommended__h3}>Mountains</h3>
-            </div>
-            <div className={classes.recommended__card}>
-              <img
-                src={grid1}
-                alt={grid1}
-                className={classes.recommended__img}
-              />
-              <h3 className={classes.recommended__h3}>Mountains</h3>
-            </div> */
