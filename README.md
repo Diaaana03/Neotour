@@ -1,4 +1,4 @@
-# Meal Finder Project
+# Neotour Project
 Neotour is an app where you can discover different trips. Website includes discovery, recommended, tour and info bookingsection. Each trip provided with detailed infromation. It was created in training purposes.
 
 ## Built with 
@@ -9,6 +9,7 @@ Neotour is an app where you can discover different trips. Website includes disco
 * react-router-dom: A collection of navigational components that compose declaratively with your application.
 * react-hooks: Functions that let you use state and other React features without writing a class.
 * axios: A promise-based HTTP client for the browser and Node.js, used to fetch data from APIs.
+* react-modal: The modal component provides a solid foundation for creating dialogs, popovers, lightboxes, or whatever else.
 * https://muha-backender.org.kg/api/schema/swagger-ui/ for API requests
 
 ### Installation
