@@ -23,5 +23,5 @@ npm install
 3. Start the development server via command: 
 npm start
 4. The application will be available at http://localhost:3000
-5. The final version of the project you can find here: 
+5. The final version of the project you can find here: https://neotour-di.vercel.app/
 
